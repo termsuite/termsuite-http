@@ -41,8 +41,9 @@ public class TermSuiteHttpConfig {
 	}
 
 	private static final String P_TAGGER_PATH="tagger.path";
-	private static final String P_MAX_REQUEST_PER_SERVICE="max.requests";
-	private static final String P_LANG="lang";
+	private static final String P_MAX_REQUEST_PER_SERVICE="termsuite.preprocessor.max_requests";
+	private static final String P_LANG="termsuite.lang";
+	private static final String P_HTTP_PORT="http.port";
 
 	
 	public static Path getTaggerPath() {
@@ -66,5 +67,9 @@ public class TermSuiteHttpConfig {
 
 	public static int getMaxRequests() {
 		return Integer.parseInt(getProperty(P_MAX_REQUEST_PER_SERVICE, "1000"));
+	}
+
+	public static int getHttpPort() {
+		return Integer.parseInt(getProperty(P_HTTP_PORT, "4567"));
 	}
 }

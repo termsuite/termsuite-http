@@ -1,3 +1,4 @@
-lang=fr
-max.requests=100
+termsuite.lang=fr
+termsuite.preprocessor.max_requests=100
 tagger.path=/opt/treetagger
+http.port=4567
