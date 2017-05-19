@@ -5,10 +5,15 @@ import spark.Spark;
 public class TermSuiteHttp {
 	
 	public static void main(String[] args) {
+		// Ensures properties can be load without any pb
+		TermSuiteHttpConfig.properties();
+		
 		routes();
 	}
 
 	private static void routes() {
+		
+		
 		Spark.post("/preprocess", "text/plain", PreprocessApi::preprocessPostFromJson);
 		Spark.get("/preprocess", PreprocessApi::getPreprocess);
 		
