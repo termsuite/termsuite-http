@@ -8,11 +8,13 @@ public class TermSuiteHttp {
 		// Ensures properties can be load without any pb
 		TermSuiteHttpConfig.properties();
 		
+		// configure port
+		Spark.port(TermSuiteHttpConfig.getHttpPort());
+
 		routes();
 	}
 
 	private static void routes() {
-		
 		
 		Spark.post("/preprocess", "text/plain", PreprocessApi::preprocessPostFromJson);
 		Spark.get("/preprocess", PreprocessApi::getPreprocess);
