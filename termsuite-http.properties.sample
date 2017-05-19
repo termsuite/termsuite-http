@@ -1,0 +1,3 @@
+lang=fr
+max.requests=100
+tagger.path=/opt/treetagger
